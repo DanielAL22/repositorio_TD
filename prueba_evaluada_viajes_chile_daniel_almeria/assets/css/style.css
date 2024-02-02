@@ -1,0 +1,61 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: x-large;
+}
+
+
+
+/* Personaliza los contenedores de iconos de la sección de presentación */
+.containerIcon {
+    text-align: center;
+    background-color: #0dcaf0;
+    font-size: 22px;
+}
+
+
+.card-custom-background {
+    background-color: #0dcaf0; 
+}
+
+/* Aumenta el tamaño del cajón de texto del input "mensaje" */
+.custom-textarea {
+    height: 150px; 
+}
+
+.custom-modal {
+    color: black;
+}
+
+/* Personaliza el color del botón "enviar" */
+.btn-custom {
+    background-color: #0dcaf0;
+    color: white;
+}
+
+.custom-toast-body {
+    background-color: green;
+    color: white;
+}
+
+
+footer {
+    background-color: #0dcaf0;
+    color: white;
+}
+
+
+  
+/* Personaliza los enlaces para que no aparezcan con el azul característico */
+.social-link {
+        color: white; 
+        text-decoration: none;
+        font-size: 30px; /* Ajusta el tamaño según tus preferencias */
+        margin-right: 10px;
+    }
