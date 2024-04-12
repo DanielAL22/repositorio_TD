@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?><Db flnm="desafio_evaluado_entidad_relacion_daniel_almeria" nm="ejercicio_fichas_medicas" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>C:\Users\Asus\Desktop\full_stack_python\M5_fundamentos_de_bases_de_datos_relaciones\4_modelos-entidad-relacion-relacional\dia10_20240328</DocFolder>
+  <Sch Cm="" nm="public">
+    <Tbl UsSo="1" nm="centro">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkcentro"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="direccion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="centro_especialidad">
+      <TblOpts/>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="centro_especialidadd">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkcentro_especialidadd"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_centro" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_especialidad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_centro_especialidadd_centro" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="centro" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="centro_especialidadd" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_centro" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_centro_especialidadd_especialidad" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="especialidad" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="centro_especialidadd" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_especialidad" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="centro_medico">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkcentro_medico"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_centro" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_medico" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_centro_medico_centro" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="centro" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="centro_medico" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_centro" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_centro_medico_medico" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="medico" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="centro_medico" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_medico" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="consulta">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkconsulta"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fecha" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hora" nu="0">
+        <DT arr="0" ds="Time" en="" id="92" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="n_box" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="planta" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_paciente" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_centro" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_medico" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_licencia" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_consulta_centro" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="centro" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="consulta" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_centro" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_consulta_licencia" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="licencia" oe="1" sch="public" zr="1"/>
+        <CdTb mn="0" nm="consulta" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="id_licencia" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_consulta_medico" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="medico" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="consulta" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_medico" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_consulta_paciente" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="paciente" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="consulta" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_paciente" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="especialidad">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkespecialidad"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="licencia">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pklicencia"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="diagnostico" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fecha_inicio" nu="0">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fecha_termino" nu="0">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="medico">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkmedico"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="rut" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="10" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="apellido" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="25" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="telefono" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="12" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_especialidad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="direccion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="25" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_medico_especialidad" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="especialidad" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="medico" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_especialidad" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="paciente">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkpaciente"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="rut" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="10" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="25" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="apellido" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="25" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="direccion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="telefono" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="12" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="edad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="paciente_centro">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkpaciente_centro"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_paciente" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_centro" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_paciente_centro_centro" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="centro" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="paciente_centro" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_centro" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_paciente_centro_paciente" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="paciente" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="paciente_centro" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_paciente" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="paciente_especialidad">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkpaciente_especialidad"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_paciente" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_especialidad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_paciente_especialidad_especialidad" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="especialidad" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="paciente_especialidad" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_especialidad" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_paciente_especialidad_paciente" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="paciente" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="paciente_especialidad" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_paciente" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="paciente_medico">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkpaciente_medico"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_paciente" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="id_medico" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_paciente_medico_medico" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="medico" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="paciente_medico" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_medico" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_paciente_medico_paciente" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="paciente" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="paciente_medico" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="id_paciente" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="receta">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkreceta"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="medicamento" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="dosis" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="25" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="instrucciones" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <CustomTypes/>
+  </Sch>
+  <Dgm nm="diagramA">
+    <RnCf ClkAct="true" FtSz="12" lkStgy="RightAngleStrategy" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="0"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="1"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="1"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="0"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <DiaProps>
+      <Show AllCols="1" FkCols="1" FkNms="1" PkCols="1"/>
+      <ErNotation>BarkerErNotation</ErNotation>
+      <DbTableRectangleFill>HeaderFooterFill</DbTableRectangleFill>
+      <svg path=""/>
+    </DiaProps>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="especialidad" x="1258" y="349"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="centro" x="888" y="50"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="medico" x="877" y="520"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="consulta" x="494" y="206"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="centro_especialidadd" x="1359" y="82"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="centro_medico" x="922" y="230"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="paciente" x="126" y="217"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="licencia" x="318" y="472"/>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.centro_especialidadd.fk_centro_especialidadd_centro" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1109" x2="1359" y1="132" y2="132"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.centro_especialidadd.fk_centro_especialidadd_especialidad" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1486" x2="1574" y1="354" y2="354"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1578" x2="1578" y1="172" y2="350"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.centro_medico.fk_centro_medico_centro" parentEdge="SOUTH" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1096" x2="1096" y1="140" y2="230"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.centro_medico.fk_centro_medico_medico" parentEdge="NORTH" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="935" x2="935" y1="520" y2="320"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.consulta.fk_consulta_centro" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="888" x2="706" y1="131" y2="131"/>
+        <positionableLine lineRole="CHILD_LINE" x1="702" x2="702" y1="206" y2="135"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.consulta.fk_consulta_licencia" parentEdge="NORTH" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="569" x2="569" y1="472" y2="392"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.consulta.fk_consulta_medico" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="877" x2="706" y1="542" y2="542"/>
+        <positionableLine lineRole="CHILD_LINE" x1="702" x2="702" y1="392" y2="538"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.consulta.fk_consulta_paciente" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="347" x2="494" y1="326" y2="326"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.medico.fk_medico_especialidad" parentEdge="WEST" positioner="ThreeLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1258" x2="1161" y1="418" y2="418"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1140" x2="1153" y1="525" y2="525"/>
+        <positionableLine lineRole="MIDDLE_LINE" x1="1157" x2="1157" y1="521" y2="422"/>
+      </positionableLines>
+    </FkGl>
+    <Notes/>
+    <Zones/>
+  </Dgm>
+  <RnmMgr>
+    <RnmCh ObjCls="Schema" ParCls="Database" ParNme="ejercicio_fichas_medicas" SupCls="" SupNme="">
+      <Rnm nNm="public" oNm="schemaA"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="especialidad" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="centro" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="centro" SupCls="Schema" SupNme="public">
+      <Rnm nNm="nombre" oNm="descripcion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="medico" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="consulta" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="receta" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm nNm="centro_especialidadd" oNm="centro especialidadd"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="centro_medico" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="paciente" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="paciente_centro" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="paciente_especialidad" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="paciente_medico" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="licencia" SupCls="Schema" SupNme="public">
+      <Rnm nNm="id" oNm="Id"/>
+    </RnmCh>
+  </RnmMgr>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BoolOpt lbl="Diagrams" nm="doc.diagrams" on="1" spl="0"/>
+      <BoolOpt lbl="Foreign Keys" nm="doc.fks" on="1" spl="0"/>
+      <BoolOpt lbl="Indexes" nm="doc.indexes" on="1" spl="0"/>
+      <BoolOpt lbl="Overwrite CSS File" nm="doc.overwrite.css" on="1" spl="0"/>
+      <BoolOpt lbl="Procedures" nm="doc.procs" on="1" spl="0"/>
+      <BoolOpt lbl="Schemas" nm="doc.schemas" on="1" spl="0"/>
+      <BoolOpt lbl="Sequences" nm="doc.sequences" on="1" spl="0"/>
+      <BoolOpt lbl="Tables" nm="doc.tables" on="1" spl="0"/>
+      <BoolOpt lbl="Triggers" nm="doc.triggers" on="1" spl="0"/>
+      <BoolOpt lbl="Views" nm="doc.views" on="1" spl="0"/>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+  <OpenEditors>
+    <OpenEditor ClsNm="Diagram" fqn="null.diagramA" selected="1"/>
+  </OpenEditors>
+  <TreePaths>
+    <TreePath/>
+    <TreePath>/Schemas (1)</TreePath>
+  </TreePaths>
+  <SqlTexts/>
+</Db>
