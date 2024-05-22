@@ -1,0 +1,99 @@
+{% extends "principal.html"%}
+{% load crispy_forms_tags %}
+{% block contenedor %}
+
+<div class="container-fluid custom-welcome-container">
+    <div class="container pt-3 pb-5 custom-welcome-container-text">
+        <h3>Buscar propiedades</h3>
+        <h5>Encuentra la propiedad ideal utlizando los filtros de búsqueda</h5>
+    </div>
+</div>
+
+<div class="row">
+
+
+    <div class="col-12 col-md-6 offset-md-3 mb-5">
+        <div class="card mt-5 mb-5">
+            <div class="card-body">
+
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ search_properties_form | crispy }}
+
+                    <button type="submit" class="btn btn-success">Buscar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+                
+<!-- Container added for grid system -->
+<div class="container mt-5">
+    <!-- Row added to organize columns -->
+    <div class="row custom-row gy-4">
+        {% for propiedad in propiedades %}
+        <div class="col-12 col-md-6 col-lg-3 mb-4 custom-col">
+            <a href="{% url 'view_property' propiedad.id %}" class="card-link">
+                <div class="card border-0" style="width: 18rem;">
+                    <div id="carouselExampleIndicators{{forloop.counter}}" class="carousel slide">
+
+
+                        <div class="carousel-indicators">
+                            {%for imagen in propiedad.imageninmueble_set.all %}
+                            {% if forloop.counter == 1 %}
+                            <button type="button"
+                                data-bs-target="#carouselExampleIndicators{{forloop.parentloop.counter}}"
+                                data-bs-slide-to="{{ forloop.counter0 }}" class="active" aria-current="true"
+                                aria-label="Slide {{ forloop.counter0 }}"></button>
+                            {%else%}
+                            <button type="button"
+                                data-bs-target="#carouselExampleIndicators{{forloop.parentloop.counter}}"
+                                data-bs-slide-to="{{ forloop.counter|add:-1}}"
+                                aria-label="Slide {{ forloop.counter}}"></button>
+                            {%endif%}
+                            {%endfor%}
+                        </div>
+
+
+
+                        <div class="carousel-inner">
+                            {%for imagen in propiedad.imageninmueble_set.all %}
+                            {% if forloop.counter == 1 %}
+                            <div class="carousel-item active">
+                                <img src="{{ imagen.imagen.url }}" class="d-block w-100" alt="{{ propiedad.titulo }}"
+                                    style="max-width: 100%; height: 100%;">
+                            </div>
+                            {%else%}
+                            <div class="carousel-item">
+                                <img src="{{ imagen.imagen.url }}" class="d-block w-100" alt="{{ propiedad.titulo }}"
+                                    style="max-width: 100%; height: 100%;">
+                            </div>
+                            {% endif %}
+                            {%endfor%}
+
+                        </div>
+                    </div>
+
+
+                    <div class="card-body custom-card-body">
+                        <h5 class="card-title">{{propiedad.direccion.comuna.nombre | title}},
+                            {{propiedad.direccion.comuna.region.nombre | title}}</h5>
+                        <p class="card-text">{{propiedad.tipo_inmueble | title}}</p>
+                        <h4 class="card-text">${{propiedad.precio}}CLP<span class="mes"> mes</span></h4>
+                    </div>
+                </div>
+
+            </a>
+        </div>
+        {%endfor%}
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

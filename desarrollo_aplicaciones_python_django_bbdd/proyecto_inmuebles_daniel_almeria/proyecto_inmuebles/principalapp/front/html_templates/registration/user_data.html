@@ -1,0 +1,37 @@
+{% extends "principal.html"%}
+{% load crispy_forms_tags %}
+{% block contenedor %}
+
+
+
+<div class="row">
+
+
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card mt-5 mb-5">
+            <div class="card-body">
+                <h2 class="mb-3">Datos usuario</h2>
+                <h5>Nombre de usuario</h5>
+                <p>{{data.username}}</p>
+                <h5>Nombre</h5>
+                <p>{{data.first_name | title}}</p>
+                <h5>Apellido</h5>
+                <p>{{data.last_name | title}}</p>
+                <h5>Correo electrónico</h5>
+                <p>{{data.email}}</p>
+                <h5>Rut</h5>
+                <p>{{data.rut}}</p>
+                <h5>Dirección</h5>
+                <p>{{data.direccion}}</p>
+                <h5>Teléfono</h5>
+                <p>{{data.telefono}}</p>
+                <h5>Tipo de usuario</h5>
+                <p>{{data.tipo_usuario | title}}</p>
+                <a href="{% url 'update_profile' %}" class="btn btn-success">Actualizar datos</a>
+                <button type="button" class="btn btn-danger">Eliminar perfil</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+
+
+.custom-navbar {
+    background-color: rgb(255, 87, 87);
+    color: white;
+    font-size: large;
+}
+
+.custom-welcome-container {
+    background-color: rgb(255, 87, 87);
+    color: white;
+}
+
+
+.mes {
+    font-size: 0.8em; /* Reduce el tamaño de la fuente */
+    color: #888; /* Cambia el color para que sea menos resaltado */
+}
+
+.custom-welcome-container-text {
+    margin-left : 4rem
+}
+
+.carousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+ }
+
+.custom-row {
+    margin-left: -80px;
+    margin-right: -80px;
+  }
+.custom-col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+.card-link {
+    text-decoration: none; /* Quita la subrayado del enlace */
+    color: inherit; /* Usa el color de texto heredado */
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar el mouse */
+}
+
+.card-link:hover {
+    text-decoration: none; /* Quita la subrayado al pasar el mouse sobre el enlace */
+}
+
+.custom-card-body {
+    padding-left: 0; /* Elimina el margen izquierdo del texto en la tarjeta */
+}
+
+
+ /* **********GPT********** */
+ .carousel-container {
+    width: 600px; /* Ancho fijo del carrusel */
+    height: 400px; /* Altura fija del carrusel */
+    overflow: hidden; /* Ocultar el contenido que se desborde del contenedor */
+}
+
+ .carousel-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; /* Tamaño máximo de altura para las imágenes */
+    object-fit: cover;
+}
+
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* Color de fondo del footer */
+    /* Otros estilos según sea necesario */
+    background-color: rgb(255, 87, 87);
+    color: white;
+
+}
+
+
+
+.social-link {
+    color: white; 
+    text-decoration: none;
+    font-size: 20px; /* Ajusta el tamaño según tus preferencias */
+    margin-right: 10px;
+}
+
+.social-link:hover {
+    color: grey
+}
+
+footer p {
+    font-size: 20px;
+}
+
+
+.contenedor-principal {
+    margin-bottom: 150px;
+}

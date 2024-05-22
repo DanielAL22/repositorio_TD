@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+{% block base %}
+{% load static %}
+
+<div class="row mb-5 justify-content-center" >
+    <div class="container" id="idCardBienvenido">
+        <div class="card bg-dark sharp-card border-0 pb-3">
+            <div class="card-body">
+                <h5 class="card-title">Bienvenido/a {{user.first_name | title }}</h5>
+                <p class="card-text">Tenemos una lista de productos exclusivos para ti. ¿Quieres conocer más?</p>
+            </div>
+        </div>
+    </div>
+    {% for flan in lista_flanes_publicos%}
+    <div class="card" style="width: 18rem; margin: 20px;">
+        <img src="{{flan.image_url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{flan.name}}</h5>
+            <p class="card-text">{{flan.description}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

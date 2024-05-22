@@ -1,0 +1,30 @@
+{% extends "principal.html"%}
+{% load crispy_forms_tags %}
+{% block contenedor %}
+
+
+
+<div class="row">
+
+
+    <div class="col-12 col-md-6 offset-md-3 mb-5">
+        <div class="card mt-5 mb-5">
+            <div class="card-body">
+                <h2 class="mb-3">Editar propiedad</h2>
+
+
+                {{propiedad.nombre}}
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ update_property_form | crispy }}
+
+                    <button type="submit" class="btn btn-success">Editar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

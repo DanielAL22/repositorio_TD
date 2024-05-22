@@ -1,0 +1,35 @@
+{% extends "principal.html"%}
+{% load crispy_forms_tags %}
+{% block contenedor %}
+
+<div class="container-fluid custom-welcome-container">
+    <div class="container pt-3 pb-5 custom-welcome-container-text">
+        <h3>Publicar propiedad</h3>
+        <h5>Publica tus propiedades y deja que los arrendadores te encuentren</h5>
+    </div>
+</div>
+
+
+<div class="row">
+
+
+    <div class="col-12 col-md-6 offset-md-3 mb-5">
+        <div class="card mt-5 mb-5 card border-0">
+            <div class="card-body">
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ add_property_form | crispy }}
+                    <label for="imagenes">Seleccionar imágenes:</label>
+                    <input type="file" name="imagenes" multiple>
+                    <!-- <button type="submit">Guardar propiedad</button> -->
+
+                    <button type="submit" class="btn btn-success">Publicar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

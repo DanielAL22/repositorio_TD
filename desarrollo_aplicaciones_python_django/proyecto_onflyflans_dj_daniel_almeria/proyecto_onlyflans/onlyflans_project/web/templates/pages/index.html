@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+{% block base %}
+{% load static %} 
+
+    <div class="row mt-3 mb-5 justify-content-center">
+        {% for flan in lista_flanes_privados%}
+            <div class="card" style="width: 18rem; margin: 20px;">
+                <img src= "{{flan.image_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{flan.name}}</h5>
+                <p class="card-text">{{flan.description}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
